@@ -137,7 +137,15 @@ public class FileBroken {
 			final FileHandler handler = new FileHandler(label_root_filesLabel.getText());
 			handler.getAllFiles();
 			progressBar.setValue(20);
-			handler.count();
+			long all_files = handler.count();
+			if (all_files > 10000){
+				handler.setThreadNumber(100);
+			}else if(all_files <= 100){
+				handler.setThreadNumber(30);
+			}else if (all_files < 10){
+				handler.setThreadNumber(3);
+			}
+			
 			handler.display(textArea_infoArea);
 			progressBar.setValue(50);
 			L.l();

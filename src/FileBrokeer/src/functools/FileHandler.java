@@ -37,6 +37,22 @@ public class FileHandler {
 		isdir = rootfile.isDirectory();
 		
 	}
+	
+	public void  setThreadNumber(int number) {
+		mulThreads = Executors.newFixedThreadPool(number);
+	}
+	
+	public FileHandler(String path,int coreNum) throws Exception {
+		// TODO Auto-generated constructor stub
+		mulThreads = Executors.newFixedThreadPool(coreNum);
+		rootfile = new File(path);
+		if (!rootfile.exists() ){
+			throw new FileNotFoundException(path);
+		}
+		
+		isdir = rootfile.isDirectory();
+		
+	}
 	/**
 	 *  this will broken all files and dirs
 	 */
