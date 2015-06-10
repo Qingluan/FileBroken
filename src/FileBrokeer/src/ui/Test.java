@@ -12,7 +12,7 @@ public class Test {
 			handler.display();
 			L.l(handler.count());
 //			FileHandler.Broken("/Users/darkh/Desktop/test/gradle.properties", 20);
-			handler.BrokensAll();
+//			handler.BrokensAll();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
